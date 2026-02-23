@@ -1,3 +1,8 @@
+---
+name: architect
+description: Transform vague requirements into implementation-ready prompts through iterative clarification and meta-prompting. Use when a request is vague, ambiguous, or needs refinement before coding.
+---
+
 # Architect
 
 Transform vague requirements into implementation-ready prompts through iterative clarification and meta-prompting.

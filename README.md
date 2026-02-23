@@ -4,11 +4,11 @@ A collection of reusable skills for Claude Code that enhance productivity and st
 
 ## What are Claude Skills?
 
-Claude Skills are markdown files that define structured workflows and behaviors for Claude Code. They can be invoked via slash commands or triggered automatically based on context.
+Claude Skills follow the [Agent Skills specification](https://agentskills.io) - structured workflows and behaviors for AI agents. Each skill is a directory containing a `SKILL.md` file with YAML frontmatter.
 
 ## Available Skills
 
-### [Architect](./architect.md)
+### [architect](./architect/)
 
 Transform vague requirements into implementation-ready prompts through iterative clarification and meta-prompting.
 
@@ -41,10 +41,14 @@ git clone https://github.com/kapillamba4/claude-skills.git .claude/skills
 
 ### Option 3: Copy Individual Skills
 
-Copy specific skill files to your project's `.claude/` directory:
+Copy specific skill directories to your project's `.claude/skills/` directory:
 
 ```bash
-curl -o .claude/architect.md https://raw.githubusercontent.com/kapillamba4/claude-skills/main/architect.md
+# Create the skills directory
+mkdir -p .claude/skills
+
+# Copy a skill
+cp -r architect .claude/skills/
 ```
 
 ### Option 4: Global Installation (User-level)
@@ -53,7 +57,7 @@ Clone to your user-level Claude directory to make skills available across all pr
 
 ```bash
 # Create directory if it doesn't exist
-mkdir -p ~/.claude
+mkdir -p ~/.claude/skills
 
 # Clone skills globally
 git clone https://github.com/kapillamba4/claude-skills.git ~/.claude/skills
@@ -74,7 +78,7 @@ Clone to a central location and create symlinks in specific projects:
 git clone https://github.com/kapillamba4/claude-skills.git ~/claude-skills
 
 # Link to a project
-ln -s ~/claude-skills/architect.md /path/to/project/.claude/
+ln -s ~/claude-skills/architect /path/to/project/.claude/skills/
 ```
 
 ## Usage
@@ -85,23 +89,36 @@ Once installed, invoke skills using slash commands:
 /architect I want to build a task tracker
 ```
 
+## Skill Structure
+
+Each skill follows the Agent Skills specification:
+
+```
+skill-name/
+└── SKILL.md          # Required: YAML frontmatter + Markdown instructions
+```
+
 ## Adding New Skills
 
-Create a new markdown file with:
+Create a new skill directory with a `SKILL.md` file:
+
+```bash
+mkdir -p my-skill
+```
 
 ```markdown
-# Skill Name
+---
+name: my-skill
+description: Brief description of what this skill does and when to use it.
+---
 
-Brief description of what the skill does.
+# My Skill
 
-## Triggers
-- `/command-name`
-- Auto-detect conditions
+Detailed instructions for the skill...
 
 ## Workflow
 1. Step one
 2. Step two
-...
 ```
 
 ## License
