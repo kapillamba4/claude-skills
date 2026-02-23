@@ -1,10 +1,10 @@
-# Clarify and Implement
+# Architect
 
 Transform vague requirements into implementation-ready prompts through iterative clarification and meta-prompting.
 
 ## Triggers
 
-- **Slash command**: `/clarify` or `/clarify-and-implement`
+- **Slash command**: `/architect`
 - **Auto-detect**: When a request is clearly vague or ambiguous, ask the user if they want to use this workflow before proceeding
 
 ## Workflow

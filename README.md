@@ -8,12 +8,12 @@ Claude Skills are markdown files that define structured workflows and behaviors 
 
 ## Available Skills
 
-### [Clarify and Implement](./clarify-and-implement.md)
+### [Architect](./architect.md)
 
 Transform vague requirements into implementation-ready prompts through iterative clarification and meta-prompting.
 
 **Triggers:**
-- `/clarify` or `/clarify-and-implement`
+- `/architect`
 - Auto-detects vague requests (with confirmation)
 
 **Workflow:**
@@ -44,7 +44,7 @@ git clone https://github.com/kapillamba4/claude-skills.git .claude/skills
 Copy specific skill files to your project's `.claude/` directory:
 
 ```bash
-curl -o .claude/clarify-and-implement.md https://raw.githubusercontent.com/kapillamba4/claude-skills/main/clarify-and-implement.md
+curl -o .claude/architect.md https://raw.githubusercontent.com/kapillamba4/claude-skills/main/architect.md
 ```
 
 ### Option 4: Global Installation (User-level)
@@ -74,7 +74,7 @@ Clone to a central location and create symlinks in specific projects:
 git clone https://github.com/kapillamba4/claude-skills.git ~/claude-skills
 
 # Link to a project
-ln -s ~/claude-skills/clarify-and-implement.md /path/to/project/.claude/
+ln -s ~/claude-skills/architect.md /path/to/project/.claude/
 ```
 
 ## Usage
@@ -82,7 +82,7 @@ ln -s ~/claude-skills/clarify-and-implement.md /path/to/project/.claude/
 Once installed, invoke skills using slash commands:
 
 ```
-/clarify I want to build a task tracker
+/architect I want to build a task tracker
 ```
 
 ## Adding New Skills
