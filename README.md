@@ -47,9 +47,27 @@ Copy specific skill files to your project's `.claude/` directory:
 curl -o .claude/clarify-and-implement.md https://raw.githubusercontent.com/kapillamba4/claude-skills/main/clarify-and-implement.md
 ```
 
-### Option 4: Global Installation
+### Option 4: Global Installation (User-level)
 
-Clone to a central location and create symlinks in your projects:
+Clone to your user-level Claude directory to make skills available across all projects:
+
+```bash
+# Create directory if it doesn't exist
+mkdir -p ~/.claude
+
+# Clone skills globally
+git clone https://github.com/kapillamba4/claude-skills.git ~/.claude/skills
+```
+
+Or add as a submodule if you track your dotfiles with git:
+
+```bash
+git submodule add https://github.com/kapillamba4/claude-skills.git ~/.claude/skills
+```
+
+### Option 5: Symlink Individual Skills
+
+Clone to a central location and create symlinks in specific projects:
 
 ```bash
 # Clone to a central location
