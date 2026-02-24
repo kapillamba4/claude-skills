@@ -23,6 +23,26 @@ Transform vague requirements into implementation-ready prompts through iterative
 4. User reviews and approves
 5. Implementation begins
 
+### [ux-lens](./ux-lens/)
+
+Perform a comprehensive UX & UI audit of any website via browser. Analyzes accessibility, visual design, usability, and user experience patterns.
+
+**Triggers:**
+- `/ux-lens [URL]`
+- Auto-detects requests to review, audit, or evaluate website design
+
+**Audit Categories:**
+- Accessibility (WCAG 2.1 compliance)
+- Visual Design (hierarchy, typography, color)
+- Usability (navigation, CTAs, forms)
+- UX Patterns (onboarding, empty states, micro-interactions)
+- Mobile Responsiveness
+
+**Output:**
+- Severity-classified findings (Critical/Major/Minor/Suggestion)
+- Score overview by category
+- Prioritized action items
+
 ## Installation
 
 ### Option 1: Git Submodule (Recommended)
